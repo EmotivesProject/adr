@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   traefik:
-    image: traefik:v2.2
+    image: traefik:v2.4
     restart: unless-stopped
     ports:
       - "80:80"
@@ -10,6 +10,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./traefik.prod.toml:/etc/traefik/traefik.toml"
+      - "./letsencrypt:/letsencrypt"
     networks:
       traefik:
 
