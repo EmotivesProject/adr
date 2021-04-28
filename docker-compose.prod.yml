@@ -10,9 +10,12 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./traefik.prod.toml:/etc/traefik/traefik.toml"
-      - "./letsencrypt:/letsencrypt"
+      - "letsencrypt:/letsencrypt"
     networks:
       traefik:
+
+volume:
+  letsencrypt:
 
 networks:
   traefik:
