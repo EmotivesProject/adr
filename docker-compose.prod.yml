@@ -9,6 +9,7 @@ services:
       - "443:443"
     volumes:
       - letsencrypt:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/localtime:/etc/localtime:ro
       - ./traefik.prod.toml:/etc/traefik/traefik.toml
     networks:
