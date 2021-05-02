@@ -8,13 +8,13 @@ services:
       - "80:80"
       - "443:443"
     volumes:
+      - letsencrypt:/letsencrypt
       - /etc/localtime:/etc/localtime:ro
       - ./traefik.prod.toml:/etc/traefik/traefik.toml
-      - letsencrypt:/letsencrypt
     networks:
       traefik:
 
-volume:
+volumes:
   letsencrypt:
 
 networks:
