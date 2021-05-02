@@ -1,0 +1,25 @@
+name: Merged items
+
+# only trigger on pull request closed events
+on:
+  pull_request:
+    types: [ closed ]
+
+jobs:
+  build-and-push-image:
+    # this job will only run if the PR has been merged
+    if: github.event.pull_request.merged == true
+    runs-on: self-hosted
+    steps:
+      - name: Connect and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: 162.0.216.160
+          username: root
+          password: Github123
+          port: 22
+          script: |
+            rm -R adr
+            git clone git@github.com:TomBowyerResearchProject/adr.git
+            cd adr
+            ./scripts/start.sh prod yes
