@@ -4,7 +4,6 @@ on: [push]
 name: Lint and Test
 jobs:
   full-run:
-    strategy:
     runs-on: self-hosted
     steps:
     - name: Test Dev build
