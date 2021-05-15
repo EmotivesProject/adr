@@ -1,0 +1,12 @@
+# NOTE: if you want to use github as opposed to my self hosted option for running test
+# add a os in the matrix such as os: [ubuntu-latest] and then change runs-on to ${{ matrix.os }}
+on: [push]
+name: Lint and Test
+jobs:
+  full-run:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Test build
+      run: make test
