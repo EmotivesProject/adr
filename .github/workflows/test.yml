@@ -6,6 +6,8 @@ jobs:
   full-run:
     runs-on: self-hosted
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: Test Dev build
       run: make test_dev
     - name: Test prod build
