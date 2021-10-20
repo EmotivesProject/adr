@@ -13,13 +13,10 @@ jobs:
     steps:
       - name: Connect and deploy
         uses: appleboy/ssh-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          envs: GITHUB_TOKEN
           script: |
             rm -R adr
             git clone git@github.com:TomBowyerResearchProject/adr.git
