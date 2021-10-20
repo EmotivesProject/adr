@@ -7,11 +7,11 @@ build="$2"
 if [ "$stage" == 'prod' ]; then
 	if [ "$build" == 'yes' ]; then
 		echo Building prod and running it
-		docker-compose -f docker-compose.prod.yml --force-recreate up -d --build
+		docker-compose -f docker-compose.prod.yml up -d --build --force-recreate
 		exit
 	fi
 	echo Running prod
-	docker-compose -f docker-compose.prod.yml --force-recreate up -d
+	docker-compose -f docker-compose.prod.yml up -d --force-recreate
 	exit
 fi
 
