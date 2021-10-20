@@ -11,7 +11,7 @@ if [ "$stage" == 'prod' ]; then
 		exit
 	fi
 	echo Running prod
-	docker-compose -f docker-compose.prod.yml up -d
+	docker-compose -f docker-compose.prod.yml --force-recreate up -d
 	exit
 fi
 
