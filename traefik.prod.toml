@@ -17,7 +17,7 @@
     exposedByDefault = false
 
 [certificatesResolvers.letsencrypt.acme]
-  email = "tom4310@gmail.com"
+  email = "emotives.acc@gmail.com"
   storage = "/letsencrypt/acme.json"
   [certificatesResolvers.letsencrypt.acme.httpChallenge]
     entryPoint = "web"
