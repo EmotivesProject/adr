@@ -19,6 +19,6 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             rm -R adr
-            git clone git@github.com:TomBowyerResearchProject/adr.git
+            git clone git@github.com:EmotivesProject/adr.git
             cd adr
             ./scripts/start.sh prod yes
